@@ -1,4 +1,6 @@
 import getUserData from "./renderData";
+import sortFunction from "./helpers/sortFunction";
+import createTableBody from "./helpers/createTableBody";
 import "./style.css";
 
 export async function init() {
@@ -39,25 +41,15 @@ export async function init() {
 
   const arr = await getUserData();
 
-  function createTable(parent, rows, cols) {
-    for (let rowCounter = 0; rowCounter < rows; rowCounter += 1) {
-      const tr = document.createElement("tr");
-      tr.classList.add("row");
-      for (let colCounter = 0; colCounter < cols; colCounter += 1) {
-        const td = document.createElement("td");
-        if (colCounter === 2) {
-          const div = document.createElement("div");
-          td.appendChild(div);
-          div.classList.add("long-text");
-          div.innerHTML = `${arr[rowCounter][colCounter]}`;
-        } else {
-          td.innerHTML = `${arr[rowCounter][colCounter]}`;
-        }
-        td.classList.add("cell");
-        tr.appendChild(td);
-      }
-      parent.appendChild(tr);
-    }
-  }
-  createTable(tbody, arr.length, 4);
+  // вызываем функцию, которая будет в цикле наполнять тело таблицы
+  createTableBody(tbody, arr.length, 4, arr);
+
+  // вешаем обработчик событий на все "th"
+  // по клику на любую из ячеек с заголовками в шапке таблице
+  // будет вызвана функция сортировки
+  document
+    .querySelectorAll("th")
+    .forEach((th, index) =>
+      th.addEventListener("click", () => sortFunction(index, table))
+    );
 }
