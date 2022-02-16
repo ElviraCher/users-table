@@ -10,7 +10,7 @@ body {
 }
 
 .cell {
-  background-color: yellow;
+  background-color: lemonchiffon;
   padding: 5px;
   border: 1px solid;
 }
@@ -22,4 +22,26 @@ body {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+.eye {
+  box-sizing: border-box;
+  width: 5rem;
+  height: 4rem;
+  align-self: center;
+  border: 0.1rem solid black;
 
+}
+.eye__red {
+  background-color: red;
+}
+
+.eye__brown {
+  background-color: brown;
+}
+
+.eye__blue {
+  background-color: blue;
+}
+
+.eye__green {
+  background-color: green;
+}
