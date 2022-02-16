@@ -18,15 +18,21 @@ export async function init() {
 
   root.appendChild(table);
 
-  const row1 = document.createElement("tr");
-  const heading1 = document.createElement("th");
-  heading1.innerHTML = "Имя";
-  const heading2 = document.createElement("th");
-  heading2.innerHTML = "Фамилия";
-  const heading3 = document.createElement("th");
-  heading3.innerHTML = "О себе";
-  const heading4 = document.createElement("th");
-  heading4.innerHTML = "Цвет глаз";
+  const headingRow = document.createElement("tr");
+  const nameHeading = document.createElement("th");
+  nameHeading.innerHTML = "Имя";
+  const secondNameHeading = document.createElement("th");
+  secondNameHeading.innerHTML = "Фамилия";
+  const aboutHeading = document.createElement("th");
+  aboutHeading.innerHTML = "О себе";
+  const eyeColorHeading = document.createElement("th");
+  eyeColorHeading.innerHTML = "Цвет глаз";
+
+  headingRow.appendChild(nameHeading);
+  headingRow.appendChild(secondNameHeading);
+  headingRow.appendChild(aboutHeading);
+  headingRow.appendChild(eyeColorHeading);
+  thead.appendChild(headingRow);
 
   row1.appendChild(heading1);
   row1.appendChild(heading2);
