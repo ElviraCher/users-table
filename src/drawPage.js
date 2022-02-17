@@ -26,12 +26,20 @@ export default async function drawPage() {
   const headingRow = document.createElement("tr");
   const nameHeading = document.createElement("th");
   nameHeading.innerHTML = "Имя";
+  nameHeading.classList.add("table__heading");
+
   const secondNameHeading = document.createElement("th");
   secondNameHeading.innerHTML = "Фамилия";
+  secondNameHeading.classList.add("table__heading");
+
   const aboutHeading = document.createElement("th");
   aboutHeading.innerHTML = "О себе";
+  aboutHeading.classList.add("table__heading");
+
   const eyeColorHeading = document.createElement("th");
   eyeColorHeading.innerHTML = "Цвет глаз";
+  eyeColorHeading.classList.add("table__heading");
+
   // добавляем ячейки в строку с заголовком, а строку в шапку таблицы
   headingRow.appendChild(nameHeading);
   headingRow.appendChild(secondNameHeading);
