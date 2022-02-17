@@ -1,6 +1,8 @@
 import getUserData from "./renderData";
 import sortFunction from "./helpers/sortFunction";
 import createTableBody from "./helpers/createTableBody";
+import createForm from "./helpers/createForm";
+import editTableForm from "./helpers/editTableForm";
 import "./style.css";
 
 export default async function drawPage() {
@@ -60,4 +62,15 @@ export default async function drawPage() {
     .forEach((th, index) =>
       th.addEventListener("click", () => sortFunction(index, table))
     );
+  document.querySelectorAll(".row").forEach((tr) =>
+    tr.addEventListener("click", () => {
+      const form = root.querySelector(".form");
+      if (!form) {
+        createForm(root);
+        editTableForm(tr);
+      } else {
+        console.log("Вы находитесь в режиме редактирования формы");
+      }
+    })
+  );
 }
