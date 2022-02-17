@@ -11,10 +11,7 @@ export default function sortFunction(index, table) {
   const sortedRows = Array.from(table.rows)
     .slice(1)
     .sort((cellA, cellB) =>
-      cellA.cells[index].innerHTML >
-      cellB.cells[index].innerHTML
-        ? 1
-        : -1
+      cellA.cells[index].innerHTML > cellB.cells[index].innerHTML ? 1 : -1
     );
 
   table.append(...sortedRows);
