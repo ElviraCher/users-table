@@ -1,6 +1,6 @@
 import "./style.css";
-import { init } from "./drawPage";
+import drawPage from "./drawPage";
 
 (async function main() {
-  await init();
+  await drawPage();
 })();

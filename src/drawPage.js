@@ -3,7 +3,7 @@ import sortFunction from "./helpers/sortFunction";
 import createTableBody from "./helpers/createTableBody";
 import "./style.css";
 
-export async function init() {
+export default async function drawPage() {
   // находим корневой div в index.html
   const root = document.querySelector("#root");
   // создаём таблицу, у которой есть заголовок, шапка и тело
