@@ -1,4 +1,4 @@
-export default function createForm(root) {
+export default function createForm(parent) {
   // создаём форму и добавдяем её класс
   const formContainer = document.createElement("form");
   formContainer.classList.add("form");
@@ -58,5 +58,5 @@ export default function createForm(root) {
   formContainer.append(eyeColorSelect);
   formContainer.append(submitButton);
   formContainer.append(removeButton);
-  root.append(formContainer);
+  parent.append(formContainer);
 }
