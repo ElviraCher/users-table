@@ -18,6 +18,7 @@
 
 import createForm from "./createForm";
 import editTableForm from "./editTableForm";
+import createAlertForm from "./createAlertForm";
 
 export default async function createTableBody(rows, cols, arr) {
   const tableBody = document.querySelector("tbody");
@@ -60,7 +61,7 @@ export default async function createTableBody(rows, cols, arr) {
         createForm(root);
         editTableForm(tr);
       } else {
-        console.log("Вы находитесь в режиме редактирования формы");
+        createAlertForm();
       }
     })
   );
