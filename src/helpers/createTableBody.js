@@ -16,7 +16,13 @@
 // необходимые для стилизации классы
 // также, создаём дополнитльные div, где это необходимо для стилизации
 
-export default function createTableBody(parent, rows, cols, arr) {
+import createForm from "./createForm";
+import editTableForm from "./editTableForm";
+
+export default async function createTableBody(rows, cols, arr) {
+  const tableBody = document.querySelector("tbody");
+  tableBody.classList.add("table__body");
+
   for (let rowCounter = 0; rowCounter < rows; rowCounter += 1) {
     const tr = document.createElement("tr");
     tr.classList.add("row");
@@ -42,6 +48,20 @@ export default function createTableBody(parent, rows, cols, arr) {
       td.classList.add("cell");
       tr.appendChild(td);
     }
-    parent.appendChild(tr);
+    tableBody.appendChild(tr);
   }
+
+  const root = document.querySelector("#root");
+
+  document.querySelectorAll(".table__body .row").forEach((tr) =>
+    tr.addEventListener("click", () => {
+      const form = root.querySelector(".form");
+      if (!form) {
+        createForm(root);
+        editTableForm(tr);
+      } else {
+        console.log("Вы находитесь в режиме редактирования формы");
+      }
+    })
+  );
 }
