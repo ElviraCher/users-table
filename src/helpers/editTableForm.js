@@ -23,10 +23,10 @@ export default function editTableForm(tr) {
     row.querySelectorAll(".cell")[1].innerText = secondNameInput.value;
     row.querySelectorAll(
       ".cell"
-    )[2].innerHTML = `<div class = long-text>${aboutInput.value}</div>`;
+    )[2].innerHTML = `<div class = cell__long-text>${aboutInput.value}</div>`;
     row.querySelectorAll(
       ".cell"
-    )[3].innerHTML = `<div class = eye__${eyeColorSelect.value}></div>`;
+    )[3].innerHTML = `<div class = "cell__eye--${eyeColorSelect.value} cell__eye"></div>`;
 
     deleteForm();
   }

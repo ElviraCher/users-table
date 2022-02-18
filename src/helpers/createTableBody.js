@@ -27,14 +27,14 @@ export default function createTableBody(parent, rows, cols, arr) {
         case 2:
           div = document.createElement("div");
           td.appendChild(div);
-          div.classList.add("long-text");
+          div.classList.add("cell__long-text");
           div.innerHTML = `${arr[rowCounter][colCounter]}`;
           break;
         case 3:
           div = document.createElement("div");
           td.appendChild(div);
-          div.classList.add("eye");
-          div.classList.add(`eye__${arr[rowCounter][colCounter]}`);
+          div.classList.add("cell__eye");
+          div.classList.add(`cell__eye--${arr[rowCounter][colCounter]}`);
           break;
         default:
           td.innerHTML = `${arr[rowCounter][colCounter]}`;
