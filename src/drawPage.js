@@ -3,7 +3,6 @@ import sortFunction from "./helpers/sortFunction";
 import createTableBody from "./helpers/createTableBody";
 import createForm from "./helpers/createForm";
 import editTableForm from "./helpers/editTableForm";
-import "./style.css";
 
 export default async function drawPage() {
   // находим корневой div в index.html
@@ -18,6 +17,8 @@ export default async function drawPage() {
   // помещаем заголовок в таблицу и добавлем заголовку текст
   table.appendChild(caption);
   caption.innerText = "Таблица пользователей";
+  // присваиваем класс элементу с заголовком таблицы
+  caption.classList.add("table__caption");
   // помещаем в таблицу шапку и тело
   table.appendChild(thead);
   table.appendChild(tbody);
