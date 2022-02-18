@@ -1,9 +1,3 @@
-import getUserData from "./renderData";
-import sortFunction from "./helpers/sortFunction";
-import createTableBody from "./helpers/createTableBody";
-import createForm from "./helpers/createForm";
-import editTableForm from "./helpers/editTableForm";
-
 export default async function drawPage() {
   // находим корневой div в index.html
   const root = document.querySelector("#root");
@@ -49,29 +43,4 @@ export default async function drawPage() {
   headingRow.appendChild(aboutHeading);
   headingRow.appendChild(eyeColorHeading);
   thead.appendChild(headingRow);
-
-  const arr = await getUserData();
-
-  // вызываем функцию, которая будет в цикле наполнять тело таблицы
-  createTableBody(tbody, arr.length, 4, arr);
-
-  // вешаем обработчик событий на все "th"
-  // по клику на любую из ячеек с заголовками в шапке таблице
-  // будет вызвана функция сортировки
-  document
-    .querySelectorAll("th")
-    .forEach((th, index) =>
-      th.addEventListener("click", () => sortFunction(index, table))
-    );
-  document.querySelectorAll(".row").forEach((tr) =>
-    tr.addEventListener("click", () => {
-      const form = root.querySelector(".form");
-      if (!form) {
-        createForm(root);
-        editTableForm(tr);
-      } else {
-        console.log("Вы находитесь в режиме редактирования формы");
-      }
-    })
-  );
 }
