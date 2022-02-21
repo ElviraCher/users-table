@@ -164,8 +164,12 @@ body {
   border-top: 1px solid #717d85;
   margin: 0.5rem;
 
-  &:hover {
+  &--active {
     background-color: #6a6dcd;
+  }
+
+  &:hover {
+    border: 1px solid #6a6dcd;
   }
 }
 
