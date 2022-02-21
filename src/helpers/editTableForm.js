@@ -2,6 +2,7 @@ import deleteForm from "./deleteForm";
 
 export default function editTableForm(tr) {
   const row = tr;
+  row.classList.add("row__edited");
 
   const nameInput = document.querySelector("#name__input");
   const secondNameInput = document.querySelector("#second-name__input");
@@ -14,6 +15,10 @@ export default function editTableForm(tr) {
   nameInput.value = row.querySelectorAll(".cell")[0].innerText;
   secondNameInput.value = row.querySelectorAll(".cell")[1].innerText;
   aboutInput.value = row.querySelectorAll(".cell")[2].innerText;
+
+  const removeClass = () => {
+    row.classList.remove("row__edited");
+  };
 
   function submitFunction(e) {
     // предотвратим перезагрузку страницы
@@ -29,8 +34,10 @@ export default function editTableForm(tr) {
     )[3].innerHTML = `<div class = "cell__eye--${eyeColorSelect.value} cell__eye"></div>`;
 
     deleteForm();
+    removeClass();
   }
 
   buttonOk.addEventListener("click", submitFunction);
   buttonRemove.addEventListener("click", deleteForm);
+  buttonRemove.addEventListener("click", removeClass);
 }
