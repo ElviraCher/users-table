@@ -28,12 +28,12 @@ export default function createForm(parent) {
   eyeColorOptionRed.innerText = "red";
   // создаём 2 кнопки для управления формой, для каждой прописываем текст
   const submitButton = document.createElement("button");
-  const removeButton = document.createElement("button");
+  const cancelButton = document.createElement("button");
   submitButton.innerText = "Submit";
-  removeButton.innerText = "Remove";
+  cancelButton.innerText = "Cancel";
   // добавляем кнопкам уникальный id
   submitButton.id = "ok";
-  removeButton.id = "remove";
+  cancelButton.id = "cancel";
   // добавляем классы для стилизации элементов формы
   nameInput.classList.add("form__input");
   secondNameInput.classList.add("form__input");
@@ -44,7 +44,7 @@ export default function createForm(parent) {
   eyeColorOptionGreen.classList.add("form__select__option");
   eyeColorOptionRed.classList.add("form__select__option");
   submitButton.classList.add("form__button");
-  removeButton.classList.add("form__button");
+  cancelButton.classList.add("form__button");
   // каждому инпуту назначаем id
   nameInput.id = "name__input";
   secondNameInput.id = "second-name__input";
@@ -57,6 +57,6 @@ export default function createForm(parent) {
   formContainer.append(aboutInput);
   formContainer.append(eyeColorSelect);
   formContainer.append(submitButton);
-  formContainer.append(removeButton);
+  formContainer.append(cancelButton);
   parent.append(formContainer);
 }

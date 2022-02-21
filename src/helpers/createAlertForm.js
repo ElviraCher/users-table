@@ -10,7 +10,7 @@ export default function createAlertForm() {
     alertContainer.appendChild(alertMassage);
     root.appendChild(alertContainer);
     alertMassage.textContent = `Вы находитесь в форме редактирования. 
-  Нажмите кнопку 'remove', если хотите отменить изменения и кнопку 'submit', 
+  Нажмите кнопку 'Cancel', если хотите отменить изменения и кнопку 'Submit', 
   если хотите сохранить изменения`;
   }
 }

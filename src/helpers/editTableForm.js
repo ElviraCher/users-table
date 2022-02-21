@@ -10,7 +10,7 @@ export default function editTableForm(tr) {
   const eyeColorSelect = document.querySelector("#eye-color__select");
 
   const buttonOk = document.querySelector("#ok");
-  const buttonRemove = document.querySelector("#remove");
+  const buttonCancel = document.querySelector("#cancel");
 
   nameInput.value = row.querySelectorAll(".cell")[0].innerText;
   secondNameInput.value = row.querySelectorAll(".cell")[1].innerText;
@@ -38,6 +38,6 @@ export default function editTableForm(tr) {
   }
 
   buttonOk.addEventListener("click", submitFunction);
-  buttonRemove.addEventListener("click", deleteForm);
-  buttonRemove.addEventListener("click", removeClass);
+  buttonCancel.addEventListener("click", deleteForm);
+  buttonCancel.addEventListener("click", removeClass);
 }
