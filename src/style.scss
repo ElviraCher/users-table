@@ -77,19 +77,19 @@ body {
     border-top: 1px solid #717d85;
 
     &--red {
-      background-color: firebrick;
+      background: linear-gradient(70deg, firebrick, red);
     }
 
     &--brown {
-      background-color: saddlebrown;
+      background: linear-gradient(70deg, saddlebrown, peru);
     }
 
     &--blue {
-      background-color: royalblue;
+      background: linear-gradient(70deg, royalblue, deepskyblue);
     }
 
     &--green {
-      background-color: darkgreen;
+      background: linear-gradient(70deg, darkgreen, limegreen);
     }
   }
 }
@@ -106,11 +106,8 @@ body {
   border-bottom: 1px solid #989ea4;
   border-top: 1px solid #717d85;
   border-radius: 8px;
-  color: #fff;
+  color: white;
   padding: 2.5rem;
-  position: sticky;
-  top: 1rem;
-  align-self: start;
 
   &__input {
     width: 90%;
