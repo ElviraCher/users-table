@@ -1,7 +1,11 @@
 export default function createForm(parent) {
+  const formContainer = document.createElement("div");
+  formContainer.classList.add("container");
   // создаём форму и добавдяем её класс
-  const formContainer = document.createElement("form");
-  formContainer.classList.add("form");
+  const form = document.createElement("form");
+  form.classList.add("form");
+
+  formContainer.append(form);
   // создаём 3 инпута и один селект с вариантами цвета глаз
   const nameInput = document.createElement("input");
   const secondNameInput = document.createElement("input");
@@ -34,6 +38,11 @@ export default function createForm(parent) {
   // добавляем кнопкам уникальный id
   submitButton.id = "ok";
   cancelButton.id = "cancel";
+  const buttonContainer = document.createElement("div");
+  buttonContainer.classList.add("form__container");
+  buttonContainer.append(eyeColorSelect);
+  buttonContainer.append(submitButton);
+  buttonContainer.append(cancelButton);
   // добавляем классы для стилизации элементов формы
   nameInput.classList.add("form__input");
   secondNameInput.classList.add("form__input");
@@ -52,11 +61,9 @@ export default function createForm(parent) {
   eyeColorSelect.id = "eye-color__select";
   // все элементы делаем дочерними для формы
   // форму добавляем в корневой элемент, который передан в функцию
-  formContainer.append(nameInput);
-  formContainer.append(secondNameInput);
-  formContainer.append(aboutInput);
-  formContainer.append(eyeColorSelect);
-  formContainer.append(submitButton);
-  formContainer.append(cancelButton);
+  form.append(nameInput);
+  form.append(secondNameInput);
+  form.append(aboutInput);
+  form.append(buttonContainer);
   parent.append(formContainer);
 }
