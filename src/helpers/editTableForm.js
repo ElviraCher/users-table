@@ -31,7 +31,7 @@ export default function editTableForm(tr) {
     )[2].innerHTML = `<div class = cell__long-text>${aboutInput.value}</div>`;
     row.querySelectorAll(
       ".cell"
-    )[3].innerHTML = `<div class = "cell__eye--${eyeColorSelect.value} cell__eye"></div>`;
+    )[3].innerHTML = `<div class = "cell__eye cell__eye--${eyeColorSelect.value}"></div>`;
 
     deleteForm();
     removeClass();
