@@ -15,6 +15,3 @@ jobs:
       - name: Lint check
         run: |
           npm run lint
-      - name: Page deploy
-        run: |
-          npm run deploy
