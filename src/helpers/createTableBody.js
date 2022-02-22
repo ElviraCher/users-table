@@ -54,15 +54,28 @@ export default async function createTableBody(rows, cols, arr) {
 
   const root = document.querySelector("#root");
 
-  document.querySelectorAll(".table__body .row").forEach((tr) =>
-    tr.addEventListener("click", () => {
-      const form = root.querySelector(".form");
-      if (!form) {
-        createForm(root);
-        editTableForm(tr);
-      } else {
-        createAlertForm();
+  const editRow = (tr) => {
+    const form = root.querySelector(".form");
+    const everyRows = document.querySelectorAll(".row");
+    const tableHeading = document.querySelectorAll(".table__heading");
+    everyRows.forEach((everyRow) => {
+      if (everyRow === tr) {
+        return;
       }
-    })
-  );
+      everyRow.classList.add("row--disabled");
+    });
+    tableHeading.forEach((heading) => {
+      heading.classList.add("table__heading--disabled");
+    });
+    if (!form) {
+      createForm(root);
+      editTableForm(tr);
+    } else {
+      createAlertForm();
+    }
+  };
+
+  document
+    .querySelectorAll(".table__body .row")
+    .forEach((tr) => tr.addEventListener("click", () => editRow(tr)));
 }

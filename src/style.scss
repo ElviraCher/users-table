@@ -45,7 +45,12 @@ body {
     padding: 1rem 0;
     cursor: pointer;
 
-    &:hover {
+    &--disabled {
+      opacity: 38%;
+      cursor: not-allowed;
+    }
+
+    &:not(.table__heading__disabled):hover {
       background-color: #6a6dcd;
       opacity: 50%;
       color: white;
@@ -97,13 +102,18 @@ body {
   padding: 1rem;
   cursor: pointer;
 
-  &:hover {
+  &--disabled {
+    opacity: 38%;
+    cursor: not-allowed;
+  }
+
+  &:not(.row__disabled):hover {
     background-color: #6a6dcd;
     color: wheat;
   }
 
   &__edited {
-    background-color: #989ea4;
+    background-color: wheat;
     color: black;
   }
 
