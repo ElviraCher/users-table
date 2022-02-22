@@ -50,7 +50,7 @@ body {
       cursor: not-allowed;
     }
 
-    &:not(.table__heading__disabled):hover {
+    &:not(.table__heading--disabled):hover {
       background-color: #6a6dcd;
       opacity: 50%;
       color: white;
@@ -107,7 +107,7 @@ body {
     cursor: not-allowed;
   }
 
-  &:not(.row__disabled):hover {
+  &:not(.row--disabled):hover {
     background-color: #6a6dcd;
     color: wheat;
   }
@@ -209,12 +209,17 @@ body {
   font-weight: 500;
   height: 48px;
 
+  &--disabled {
+    opacity: 38%;
+    cursor: not-allowed;
+  }
+
   &--active {
     background-color: #6a6dcd;
     color: white;
   }
 
-  &:hover {
+  &:not(.button__counter--disabled):hover {
     border: 1px solid #6a6dcd;
   }
 }

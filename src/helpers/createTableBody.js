@@ -58,6 +58,7 @@ export default async function createTableBody(rows, cols, arr) {
     const form = root.querySelector(".form");
     const everyRows = document.querySelectorAll(".row");
     const tableHeading = document.querySelectorAll(".table__heading");
+    const pageButtons = document.querySelectorAll(".button__counter");
     everyRows.forEach((everyRow) => {
       if (everyRow === tr) {
         return;
@@ -66,6 +67,9 @@ export default async function createTableBody(rows, cols, arr) {
     });
     tableHeading.forEach((heading) => {
       heading.classList.add("table__heading--disabled");
+    });
+    pageButtons.forEach((button) => {
+      button.classList.add("button__counter--disabled");
     });
     if (!form) {
       createForm(root);
