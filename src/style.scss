@@ -48,6 +48,7 @@ body {
     &--disabled {
       opacity: 38%;
       cursor: not-allowed;
+      pointer-events: none;
     }
 
     &:not(.table__heading--disabled):hover {
@@ -105,6 +106,7 @@ body {
   &--disabled {
     opacity: 38%;
     cursor: not-allowed;
+    pointer-events: none;
   }
 
   &:not(.row--disabled):hover {
@@ -212,6 +214,7 @@ body {
   &--disabled {
     opacity: 38%;
     cursor: not-allowed;
+    pointer-events: none;
   }
 
   &--active {
