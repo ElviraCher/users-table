@@ -18,23 +18,12 @@ import createPageButtons from "./helpers/createPageButtons";
 
   await createPage(arr);
 
-  // вешаем обработчик событий на все "th"
+  // вешаем обработчик событий на все элементы с кассом "table__heading"
   // по клику на любую из ячеек с заголовками в шапке таблице
   // будет вызвана функция сортировки
   document
-    .querySelectorAll("th")
+    .querySelectorAll(".table__heading")
     .forEach((th, index) =>
       th.addEventListener("click", () => sortFunction(index, table))
     );
-  // document.querySelectorAll(".table__body .row").forEach((tr) =>
-  //   tr.addEventListener("click", () => {
-  //     const form = root.querySelector(".form");
-  //     if (!form) {
-  //       createForm(root);
-  //       editTableForm(tr);
-  //     } else {
-  //       console.log("Вы находитесь в режиме редактирования формы");
-  //     }
-  //   })
-  // );
 })();
