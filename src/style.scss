@@ -67,6 +67,11 @@ body {
   text-align: center;
   width: 20%;
 
+  &__id {
+    visibility: hidden;
+    display: none;
+  }
+
   &__long-text {
     width: 100%;
     display: -webkit-box;
