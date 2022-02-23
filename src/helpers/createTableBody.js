@@ -27,24 +27,32 @@ export default async function createTableBody(rows, cols, arr) {
   for (let rowCounter = 0; rowCounter < rows; rowCounter += 1) {
     const tr = document.createElement("tr");
     tr.classList.add("row");
-    for (let colCounter = 0; colCounter < cols; colCounter += 1) {
+    for (let colCounter = 0; colCounter < cols + 1; colCounter += 1) {
       const td = document.createElement("td");
       let div;
       switch (colCounter) {
+        case 0:
+          td.innerHTML = `${arr[rowCounter].name.firstName}`;
+          break;
+        case 1:
+          td.innerHTML = `${arr[rowCounter].name.lastName}`;
+          break;
+
         case 2:
           div = document.createElement("div");
           td.appendChild(div);
           div.classList.add("cell__long-text");
-          div.innerHTML = `${arr[rowCounter][colCounter]}`;
+          div.innerHTML = `${arr[rowCounter].about}`;
           break;
         case 3:
           div = document.createElement("div");
           td.appendChild(div);
           div.classList.add("cell__eye");
-          div.classList.add(`cell__eye--${arr[rowCounter][colCounter]}`);
+          div.classList.add(`cell__eye--${arr[rowCounter].eyeColor}`);
           break;
         default:
-          td.innerHTML = `${arr[rowCounter][colCounter]}`;
+          td.innerHTML = `${arr[rowCounter].id}`;
+          td.classList.add("cell__id");
       }
       td.classList.add("cell");
       tr.appendChild(td);
