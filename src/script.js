@@ -1,13 +1,13 @@
 import "./style.scss";
+import { USER_DATA } from "./constants";
 import drawPage from "./drawPage";
-import getUserData from "./renderData";
 import sortFunction from "./helpers/sortFunction";
 import createTableBody from "./helpers/createTableBody";
 import createPage from "./helpers/createPage";
 import createPageButtons from "./helpers/createPageButtons";
 
 (async function main() {
-  const arr = await getUserData();
+  const arr = USER_DATA;
   await drawPage();
 
   // вызываем функцию, которая будет в цикле наполнять тело таблицы
