@@ -49,6 +49,7 @@ export default async function createTableBody(rows, cols, arr) {
           td.appendChild(div);
           div.classList.add("cell__eye");
           div.classList.add(`cell__eye--${arr[rowCounter].eyeColor}`);
+          div.innerText = `${arr[rowCounter].eyeColor}`;
           break;
         default:
           td.innerHTML = `${arr[rowCounter].id}`;
