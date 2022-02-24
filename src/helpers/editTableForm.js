@@ -1,4 +1,5 @@
 import deleteForm from "./deleteForm";
+import { USER_DATA } from "../constants";
 
 export default function editTableForm(tr) {
   const row = tr;
@@ -17,6 +18,7 @@ export default function editTableForm(tr) {
   nameInput.value = row.querySelectorAll(".cell")[0].innerText;
   secondNameInput.value = row.querySelectorAll(".cell")[1].innerText;
   aboutInput.value = row.querySelectorAll(".cell")[2].innerText;
+  eyeColorSelect.value = row.querySelectorAll(".cell")[3].innerText;
 
   // создаём функцию для удаления класса строки, чтобы вызвать её,
   // когда строка уже не является редактируемой
@@ -36,10 +38,21 @@ export default function editTableForm(tr) {
     )[2].innerHTML = `<div class = cell__long-text>${aboutInput.value}</div>`;
     row.querySelectorAll(
       ".cell"
-    )[3].innerHTML = `<div class = "cell__eye cell__eye--${eyeColorSelect.value}"></div>`;
+    )[3].innerHTML = `<div class = "cell__eye cell__eye--${eyeColorSelect.value}">${eyeColorSelect.value}</div>`;
     // удаляем форму и класс редактируемой ячейки
     deleteForm();
     removeClass();
+    // находим пользователя по id и изменяем объект, который находится в переменной USER_DATA
+    const id = row.querySelectorAll(".cell")[4].innerText;
+    const user = USER_DATA.find((data) => data.id === id);
+    user.name.firstName = row.querySelectorAll(".cell")[0].innerText;
+    user.name.lastName = row.querySelectorAll(".cell")[1].innerText;
+    user.about = row
+      .querySelectorAll(".cell")[2]
+      .querySelector(".cell__long-text").innerText;
+    user.eyeColor = row
+      .querySelectorAll(".cell")[3]
+      .querySelector(".cell__eye").innerText;
   }
 
   // навешиваем обработчики событий на кнопки
