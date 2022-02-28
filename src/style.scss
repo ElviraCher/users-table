@@ -32,6 +32,8 @@ body {
   background-color: #b8c1c8;
   border-bottom: 1px solid #989ea4;
   border-top: 1px solid #717d85;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+  rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
 
   &__caption {
     margin: 2rem;
@@ -45,6 +47,47 @@ body {
     padding: 1rem 0;
     cursor: pointer;
 
+    &--outer-div {
+      //padding: 0 0.7rem 0 0;
+
+      &:hover::before {
+        content: "▶ ";
+        font-size: 80%;
+        color: wheat;
+      }
+
+      &:hover .table__heading--inner-div {
+        display: block;
+        z-index: 2;
+      }
+
+      &::before {
+        content: "▼ ";
+        font-size: 100%;
+        color: white;
+      }
+    }
+
+    &--inner-div {
+      display: none;
+      position: absolute;
+      width: fit-content;
+      padding: 0.4rem;
+      margin: 0 4.5%;
+      text-align: center;
+      border-radius: 5px;
+      color: #4b51ef;
+      border: 1px solid #717d85;
+      border-bottom: 1px solid #4b51ef;
+      cursor: pointer;
+      background: rgb(255, 255, 255);
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 1) 0%,
+        rgba(113, 125, 133, 0.42620798319327735) 99%
+      );
+    }
+
     &--disabled {
       opacity: 38%;
       cursor: not-allowed;
@@ -53,9 +96,22 @@ body {
 
     &:not(.table__heading--disabled):hover {
       background-color: #6a6dcd;
-      opacity: 50%;
       color: white;
     }
+  }
+}
+
+.inner-div {
+  padding: 1rem;
+
+  &:hover {
+    background-color: #6a6dcd;
+    color: wheat;
+    border-radius: 5px;
+  }
+
+  &--sorted {
+    cursor: not-allowed;
   }
 }
 
@@ -66,6 +122,10 @@ body {
   border-top: 1px solid #717d85;
   text-align: center;
   width: 20%;
+
+  &--invisible {
+    visibility: hidden;
+  }
 
   &__id {
     visibility: hidden;
@@ -141,6 +201,8 @@ body {
   border-bottom: 1px solid #989ea4;
   border-top: 1px solid #717d85;
   border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0 3px 5px -1px,
+  rgba(0, 0, 0, 0.14) 0 6px 10px 0, rgba(0, 0, 0, 0.12) 0 1px 18px 0;
 }
 
 .form {
