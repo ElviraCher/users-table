@@ -18,7 +18,6 @@
 
 import createForm from "./createForm";
 import editTableForm from "./editTableForm";
-import createAlertForm from "./createAlertForm";
 
 export default async function createTableBody(rows, cols, arr) {
   const tableBody = document.querySelector("tbody");
@@ -83,8 +82,6 @@ export default async function createTableBody(rows, cols, arr) {
     if (!form) {
       createForm(root);
       editTableForm(tr);
-    } else {
-      createAlertForm();
     }
   };
 
