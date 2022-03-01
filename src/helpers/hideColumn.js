@@ -1,7 +1,4 @@
-import sortFunction from "./sortFunction";
-
-export default function hideAndSortColumn() {
-  const table = document.querySelector(".table");
+export default function hideColumn() {
   const tableHeadings = document.querySelectorAll(".table__heading");
 
   tableHeadings.forEach((header, index) => {
@@ -23,6 +20,7 @@ export default function hideAndSortColumn() {
     sortDiv.textContent = "Сортировать";
     hideDiv.classList.add("inner-div");
     sortDiv.classList.add("inner-div");
+    sortDiv.classList.add("inner-div__sort");
 
     const hide = () => {
       const cells = document.querySelectorAll(".cell");
@@ -37,15 +35,6 @@ export default function hideAndSortColumn() {
       }
     };
 
-    const sort = () => {
-      tableHeadings.forEach((th, i) =>
-        th.addEventListener("click", () => sortFunction(i, table))
-      );
-      sortDiv.classList.add("inner-div--sorted");
-    };
-
     hideDiv.addEventListener("click", hide);
-
-    sortDiv.addEventListener("click", sort);
   });
 }
