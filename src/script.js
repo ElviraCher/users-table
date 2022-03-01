@@ -1,6 +1,6 @@
 import "./style.scss";
-import { USER_DATA } from "./constants";
-import drawPage from "./drawPage";
+import { USER_DATA } from "./helpers/constants";
+import drawPage from "./helpers/drawPage";
 import sortFunction from "./helpers/sortFunction";
 import createTableBody from "./helpers/createTableBody";
 import createPage from "./helpers/createPage";

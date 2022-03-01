@@ -1,5 +1,5 @@
 import deleteForm from "./deleteForm";
-import { USER_DATA } from "../constants";
+import { USER_DATA } from "./constants";
 
 export default function editTableForm(tr) {
   const row = tr;
