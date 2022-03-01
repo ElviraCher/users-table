@@ -61,7 +61,7 @@ export default async function createTableBody(rows, cols, arr) {
   }
 
   const root = document.querySelector("#root");
-
+  // сщздаём функцию, с помощью которой будем редактировать данные в строках
   const editRow = (tr) => {
     const form = root.querySelector(".form");
     const everyRows = document.querySelectorAll(".row");
@@ -84,7 +84,7 @@ export default async function createTableBody(rows, cols, arr) {
       editTableForm(tr);
     }
   };
-
+  // навешиваем обработчик клика на каждую сторку
   document
     .querySelectorAll(".table__body .row")
     .forEach((tr) => tr.addEventListener("click", () => editRow(tr)));
